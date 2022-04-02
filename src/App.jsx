@@ -48,7 +48,6 @@ function App() {
         });
         const data = await res.json();
         contact = { ...contact, ...data };
-        console.log(contact);
         const contactsList = [...contacts, contact];
         setContacts(contactsList);
         localStorage.setItem('contactsList', JSON.stringify(contactsList));
@@ -69,7 +68,6 @@ function App() {
         body: JSON.stringify({ id }),
       });
       const data = await res.json();
-      console.log('Data: ', data);
       const contactsList = contacts.filter((contact) => contact.id !== id);
       localStorage.setItem('contactsList', JSON.stringify(contactsList));
       setContacts(contactsList);
