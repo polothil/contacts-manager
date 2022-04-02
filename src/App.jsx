@@ -93,7 +93,6 @@ function App() {
           .toLowerCase()
           .includes(e.target.value.toLowerCase());
       });
-      console.log('newContacts: ', newContacts);
       setFilteredList(newContacts);
     } else {
       setFilteredList(contacts);
