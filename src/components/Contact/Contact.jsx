@@ -6,14 +6,12 @@ const Contact = ({ contact, onDelete }) => {
       <td>{contact.name}</td>
       <td>{contact.address}</td>
       <td>{contact.phone}</td>
-      {contact.id !== 0 && (
-        <td>
-          <FaTimes
-            style={{ color: 'red', cursor: 'pointer' }}
-            onClick={() => onDelete(contact.id)}
-          />
-        </td>
-      )}
+      <td>
+        <FaTimes
+          style={{ color: 'red', cursor: 'pointer' }}
+          onClick={() => onDelete(contact.id)}
+        />
+      </td>
     </tr>
   );
 };

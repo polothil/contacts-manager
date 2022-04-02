@@ -1,12 +1,23 @@
 import Contact from '../Contact/Contact';
+import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
 
-const Contacts = ({ contacts, onDelete }) => {
+const Contacts = ({ contacts, onDelete, onSort }) => {
   return (
     <>
       <table className='table table-striped '>
         <thead>
           <tr>
-            <th>Name</th>
+            <th>
+              <FaArrowUp
+                style={{ color: 'red', cursor: 'pointer' }}
+                onClick={() => onSort(1)}
+              />{' '}
+              Name{' '}
+              <FaArrowDown
+                style={{ color: 'red', cursor: 'pointer' }}
+                onClick={() => onSort(-1)}
+              />
+            </th>
             <th>Address</th>
             <th>Phone</th>
             <th></th>

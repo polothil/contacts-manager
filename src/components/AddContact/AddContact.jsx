@@ -44,19 +44,20 @@ const AddContact = ({ onAdd }) => {
       localStorage.setItem('name', '');
       localStorage.setItem('address', '');
       localStorage.setItem('phone', '');
+      inputRef.current.focus();
     }
   };
 
   const validate = (values) => {
     const errors = {};
     const regex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/;
-    if (!values.name) {
+    if (!values.name.trim()) {
       errors.name = 'Name is required';
     }
-    if (!values.address) {
+    if (!values.address.trim()) {
       errors.address = 'Address is required';
     }
-    if (!values.phone) {
+    if (!values.phone.trim()) {
       errors.phone = 'Phone number is required';
     } else if (!regex.test(values.phone)) {
       errors.phone = 'Phone number is not valid';
