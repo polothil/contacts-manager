@@ -67,7 +67,7 @@ function App() {
         },
         body: JSON.stringify({ id }),
       });
-      const data = await res.json();
+      await res.json();
       const contactsList = contacts.filter((contact) => contact.id !== id);
       localStorage.setItem('contactsList', JSON.stringify(contactsList));
       setContacts(contactsList);
