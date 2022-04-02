@@ -78,11 +78,9 @@ function App() {
   };
 
   const handleSort = (direction) => {
-    console.log('Sort called: ', direction);
     const sorted = contacts.sort((a, b) =>
       a.name > b.name ? direction : -1 * direction
     );
-    console.log('sorted contacts: ', sorted);
     setContacts([...sorted]);
   };
 
